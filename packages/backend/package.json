@@ -4,6 +4,7 @@
   "type": "module",
   "description": "",
   "dependencies": {
+    "@fastify/cors": "^10.0.2",
     "@prisma/client": "^6.2.1",
     "fastify": "^5.2.1"
   },
