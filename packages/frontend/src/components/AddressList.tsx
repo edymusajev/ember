@@ -9,10 +9,11 @@ export const AddressList = ({
   setSelectedAddress: (address: Address | null) => void;
 }) => {
   const { data } = useGetAddresses();
+
   return (
-    <div className="divide-y divide-stone-200 overflow-y-auto">
-      <div className="p-2 flex items-center justify-baseline w-full h-12">
-        <span className="flex-1 font-semibold tracking-wide">
+    <div className="divide-y divide-stone-200 overflow-y-auto w-1/3 min-w-64">
+      <div className="p-2 flex items-center justify-between w-full h-12">
+        <span className="flex-1 font-semibold tracking-wide truncate">
           Bye Bye Addresses 👋
         </span>
       </div>

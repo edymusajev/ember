@@ -59,7 +59,7 @@ const DeleteAddressDialog = ({
   };
   return (
     <Dialog>
-      <DialogTrigger className="px-2 py-1 text-sm font-medium hover:cursor-pointer">
+      <DialogTrigger className="px-2 py-1 text-sm font-medium hover:cursor-pointer flex-none">
         Delete
       </DialogTrigger>
       <DialogOverlay className="fixed inset-0 bg-stone-500 opacity-50" />
@@ -103,12 +103,12 @@ export const AddressDetails = ({
   return (
     <div className="flex-1 overflow-y-auto divide-y divide-stone-200">
       <Header />
-      <div className="max-w-xl border border-stone-200 rounded-md p-4 m-4 mx-auto">
+      <div className="max-w-xl border border-stone-200 rounded-md m-4 mx-auto divide-y divide-stone-200">
         <AddressDetailsItem label="Address" value={selectedAddress?.address} />
         <AddressDetailsItem label="Country" value={selectedAddress?.country} />
         <AddressDetailsItem label="Postal Code" value={selectedAddress?.zip} />
 
-        <div className="flex justify-end">
+        <div className="flex justify-end h-12 px-2 bg-stone-50">
           <DeleteAddressDialog
             selectedAddress={selectedAddress}
             setSelectedAddress={setSelectedAddress}
