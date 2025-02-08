@@ -1,6 +1,15 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { useDeleteAddress } from "../api";
 import { Address } from "../types";
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogOverlay,
+  DialogTitle,
+  DialogTrigger,
+} from "@radix-ui/react-dialog";
 
 const Header = () => {
   return (
@@ -27,7 +36,7 @@ const AddressDetailsItem = ({
   );
 };
 
-export const AddressDetails = ({
+const DeleteAddressDialog = ({
   selectedAddress,
   setSelectedAddress,
 }: {
@@ -48,6 +57,41 @@ export const AddressDetails = ({
       },
     });
   };
+  return (
+    <Dialog>
+      <DialogTrigger className="px-2 py-1 text-sm font-medium hover:cursor-pointer">
+        Delete
+      </DialogTrigger>
+      <DialogOverlay className="fixed inset-0 bg-stone-500 opacity-50" />
+
+      <DialogContent className="fixed top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 max-w-lg w-full bg-white rounded-md p-4 space-y-4">
+        <DialogTitle className="font-medium text-stone-900">
+          Delete Address
+        </DialogTitle>
+        <DialogDescription className="text-stone-500 text-sm">
+          Are you sure you want to delete this address?
+        </DialogDescription>
+        <div className="flex justify-end gap-4 text-sm">
+          <DialogClose>Cancel</DialogClose>
+          <DialogClose
+            className="bg-red-500 text-white px-2 py-1 rounded-md hover:cursor-pointer"
+            onClick={() => handleDeleteAddress(selectedAddress?.id)}
+          >
+            Delete
+          </DialogClose>
+        </div>
+      </DialogContent>
+    </Dialog>
+  );
+};
+
+export const AddressDetails = ({
+  selectedAddress,
+  setSelectedAddress,
+}: {
+  selectedAddress: Address | null;
+  setSelectedAddress: (address: Address | null) => void;
+}) => {
   if (!selectedAddress) {
     return (
       <div className="flex-1 overflow-y-auto divide-y divide-stone-200">
@@ -65,12 +109,10 @@ export const AddressDetails = ({
         <AddressDetailsItem label="Postal Code" value={selectedAddress?.zip} />
 
         <div className="flex justify-end">
-          <button
-            className="text-sm border rounded-md bg-red-400 hover:bg-red-500 text-white hover:cursor-pointer px-2 py-1"
-            onClick={() => handleDeleteAddress(selectedAddress?.id)}
-          >
-            Delete
-          </button>
+          <DeleteAddressDialog
+            selectedAddress={selectedAddress}
+            setSelectedAddress={setSelectedAddress}
+          />
         </div>
       </div>
     </div>
