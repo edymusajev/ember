@@ -23,6 +23,9 @@ importers:
       '@prisma/client':
         specifier: ^6.2.1
         version: 6.2.1(prisma@6.2.1)
+      '@trpc/server':
+        specifier: ^10.45.2
+        version: 10.45.2
       fastify:
         specifier: ^5.2.1
         version: 5.2.1
@@ -552,6 +555,9 @@ packages:
     resolution: {integrity: sha512-z3sYixFQJe8hndFnXgWu7C79ctL+pI0KAelYyW+khaNJ1m22lWrhJU2QrsTcRKMuVPtoZvfBYrTStIdKo+x0Xw==}
     peerDependencies:
       react: ^18 || ^19
+
+  '@trpc/server@10.45.2':
+    resolution: {integrity: sha512-wOrSThNNE4HUnuhJG6PfDRp4L2009KDVxsd+2VYH8ro6o/7/jwYZ8Uu5j+VaW+mOmc8EHerHzGcdbGNQSAUPgg==}
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -1395,6 +1401,8 @@ snapshots:
     dependencies:
       '@tanstack/query-core': 5.66.0
       react: 19.0.0
+
+  '@trpc/server@10.45.2': {}
 
   '@types/babel__core@7.20.5':
     dependencies:
