@@ -16,7 +16,10 @@ function App() {
             selectedAddress={selectedAddress}
             setSelectedAddress={setSelectedAddress}
           />
-          <AddressDetails selectedAddress={selectedAddress} />
+          <AddressDetails
+            selectedAddress={selectedAddress}
+            setSelectedAddress={setSelectedAddress}
+          />
         </div>
       </div>
     </QueryClientProvider>

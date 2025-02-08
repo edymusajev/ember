@@ -11,9 +11,10 @@ export const AddressList = ({
   const { data } = useGetAddresses();
   return (
     <div className="divide-y divide-stone-200 overflow-y-auto">
-      <div className="p-2 flex items-center justify-baseline w-full bg-stone-100 h-12">
-        <span className="flex-1 font-semibold tracking-wide">Address</span>
-        <span className="text-stone-400 text-xs font-medium ">Country</span>
+      <div className="p-2 flex items-center justify-baseline w-full h-12">
+        <span className="flex-1 font-semibold tracking-wide">
+          Bye Bye Addresses 👋
+        </span>
       </div>
       {data?.addresses.map((address) => (
         <div

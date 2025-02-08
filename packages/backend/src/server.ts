@@ -18,6 +18,15 @@ const main = async () => {
     return { addresses };
   });
 
+  server.delete("/:id", async (request) => {
+    const { id } = request.params as { id: string };
+    await prisma.address.delete({
+      where: { id: parseInt(id) },
+    });
+
+    return { message: "Address deleted" };
+  });
+
   try {
     await server.listen({
       port: 4001,
