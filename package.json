@@ -11,11 +11,13 @@
   },
   "type": "module",
   "scripts": {
-    "be": "node --experimental-strip-types --watch packages/backend/src/server.ts"
+    "be": "node --experimental-strip-types --watch packages/backend/src/server.ts",
+    "fe": "pnpm --filter frontend run dev"
   },
   "author": "Crown Road Software",
   "devDependencies": {
     "@types/node": "^22.12.0",
     "typescript": "^5.7.3"
-  }
+  },
+  "packageManager": "pnpm@9.13.2+sha1.969cc200a41db98449afee1bfa7578b3ce6ff330"
 }
