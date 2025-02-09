@@ -8,4 +8,5 @@ Initialize Prisma by navigating to `/packages/backend` and running the following
 
 ## Starting
 
+Run the frontend server: `pnpm fe`
 Run the backend server: `pnpm be`
